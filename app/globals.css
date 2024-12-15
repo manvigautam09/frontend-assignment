@@ -19,7 +19,7 @@ body {
     --gray-rgb: 0, 0, 0;
     --gray-alpha-200: rgba(var(--gray-rgb), 0.1);
     --gray-alpha-100: rgba(var(--gray-rgb), 0.07);
-
+    --table-head-hover: #ededed;
     --button-primary-hover: #383838;
     --button-secondary-hover: #f2f2f2;
     --table-row-hover: #e0f7fa;
@@ -40,7 +40,7 @@ body.dark-mode {
     --gray-rgb: 255, 255, 255;
     --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
     --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
+    --table-head-hover: #2e2e2e;
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
     --table-row-hover: #004d40;
@@ -89,7 +89,7 @@ a {
 .table th {
   position: sticky;
   top: 0;
-  background-color: #ededed;
+  background-color: var(--table-head-hover);
   font-weight: bold;
   color: var(--foreground);
   z-index: 1;
