@@ -1,10 +1,9 @@
-/* Light mode styles */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --table-row-hover: #e0f7fa; /* New bluish shade for table row hover */
-  --pagination-button-bg: #e3f2fd; /* New color for pagination button */
-  --pagination-button-hover-bg: #bbdefb; /* New color for pagination button hover */
+  --table-row-hover: #e0f7fa;
+  --pagination-button-bg: #e3f2fd;
+  --pagination-button-hover-bg: #bbdefb;
 }
 
 body {
@@ -22,15 +21,14 @@ body {
 
     --button-primary-hover: #383838;
     --button-secondary-hover: #f2f2f2;
-    --table-row-hover: #e0f7fa; /* New bluish shade for table row hover */
-    --pagination-button-bg: #e3f2fd; /* New color for pagination button */
-    --pagination-button-hover-bg: #bbdefb; /* New color for pagination button hover */
+    --table-row-hover: #e0f7fa;
+    --pagination-button-bg: #e3f2fd;
+    --pagination-button-hover-bg: #bbdefb;
 
     font-family: var(--font-geist-sans);
   }
 }
 
-/* Dark mode styles */
 body.dark-mode {
   --background: #171717;
   --foreground: #ffffff;
@@ -44,9 +42,9 @@ body.dark-mode {
 
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
-    --table-row-hover: #004d40; /* New bluish shade for table row hover */
-    --pagination-button-bg: #1e88e5; /* New color for pagination button */
-    --pagination-button-hover-bg: #1565c0; /* New color for pagination button hover */
+    --table-row-hover: #004d40;
+    --pagination-button-bg: #1e88e5;
+    --pagination-button-hover-bg: #1565c0;
   }
 }
 
@@ -61,7 +59,6 @@ a {
   text-decoration: none;
 }
 
-/* Updated table styling */
 .table {
   border-collapse: collapse;
   margin: 16px 0;
@@ -87,10 +84,9 @@ a {
 }
 
 .table tr:hover {
-  background-color: var(--table-row-hover); /* Use new variable for hover */
+  background-color: var(--table-row-hover);
 }
 
-/* Pagination styling */
 .pagination {
   display: flex;
   justify-content: center;
@@ -99,9 +95,7 @@ a {
 }
 
 .pagination button {
-  background-color: var(
-    --pagination-button-bg
-  ); /* Use new variable for button background */
+  background-color: var(--pagination-button-bg);
   border: 1px solid var(--gray-alpha-200);
   padding: 8px 16px;
   margin: 0 4px;
@@ -111,12 +105,13 @@ a {
 }
 
 .pagination button:hover {
-  background-color: var(
-    --pagination-button-hover-bg
-  ); /* Use new variable for button hover */
-  color: var(--foreground);
+  background-color: var(--pagination-button-hover-bg);
 }
 
+.pagination button:disabled {
+  background-color: var(--gray-alpha-200);
+  cursor: not-allowed;
+}
 .pagination select {
   margin: 0 8px;
   padding: 8px;
