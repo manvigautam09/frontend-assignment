@@ -4,18 +4,9 @@ import { useState } from "react";
 import { DataItem } from "@/app/page";
 import Pagination from "../Pagination";
 import { Limits } from "@/app/constant";
-import styles from "../../page.module.css";
-import LightMode from "@/app/assets/LightMode";
-import DarkMode from "@/app/assets/DarkMode";
+import DarkModeToggle from "../DarkModeToggle";
 
 export default function GithubUserTable({ data }: { data: DataItem[] }) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    document.body.classList.toggle("dark-mode", !isDarkMode);
-  };
-
   const [offSet, setOffSet] = useState(Limits[0]);
   const totalPages = Math.ceil(data.length / offSet);
   const [currentPage, setCurrentPage] = useState(1);
@@ -38,17 +29,13 @@ export default function GithubUserTable({ data }: { data: DataItem[] }) {
   };
 
   return (
-    <div className={styles.page}>
-      <div className={styles.heading}>
+    <div className="page">
+      <div className="heading">
         <h1>User content</h1>
-        {isDarkMode ? (
-          <LightMode onClick={toggleTheme} />
-        ) : (
-          <DarkMode onClick={toggleTheme} />
-        )}
+        <DarkModeToggle />
       </div>
 
-      <table className={styles.table} aria-label="Funding Data Table">
+      <table className="table" aria-label="Funding Data Table">
         <thead>
           <tr>
             <th scope="col">S.No.</th>
