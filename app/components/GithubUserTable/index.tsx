@@ -31,7 +31,7 @@ export default function GithubUserTable({ data }: { data: DataItem[] }) {
   return (
     <div className="page">
       <div className="heading">
-        <h1>User content</h1>
+        <h2>User content</h2>
         <DarkModeToggle />
       </div>
       <div className="table-outer">
