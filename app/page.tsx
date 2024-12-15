@@ -1,3 +1,5 @@
+import styles from "./page.module.css";
+
 interface DataItem {
   "s.no": number;
   "percentage.funded": number;
@@ -18,12 +20,12 @@ export default async function Page() {
   return (
     <div>
       <h1>Data Table</h1>
-      <table>
+      <table className={styles.table} aria-label="Funding Data Table">
         <thead>
           <tr>
-            <th>S.No.</th>
-            <th>Percentage funded</th>
-            <th>Amount pledged</th>
+            <th scope="col">S.No.</th>
+            <th scope="col">Percentage funded</th>
+            <th scope="col">Amount pledged</th>
           </tr>
         </thead>
         <tbody>
