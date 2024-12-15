@@ -7,7 +7,7 @@ import { Limits } from "@/app/constant";
 import DarkModeToggle from "../DarkModeToggle";
 
 export default function GithubUserTable({ data }: { data: DataItem[] }) {
-  const [offSet, setOffSet] = useState(Limits[0]);
+  const [offSet, setOffSet] = useState(Limits[2]);
   const totalPages = Math.ceil(data.length / offSet);
   const [currentPage, setCurrentPage] = useState(1);
 
