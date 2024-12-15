@@ -1,12 +1,14 @@
 import { Limits } from "@/app/constant";
 
 export default function Pagination({
+  offSet,
   totalPages,
   currentPage,
   setOffSet,
   handleNextPage,
   handlePreviousPage,
 }: {
+  offSet: number;
   totalPages: number;
   currentPage: number;
   handlePreviousPage: () => void;
@@ -21,7 +23,10 @@ export default function Pagination({
       <span>
         Page {currentPage} of {totalPages}
       </span>
-      <select onChange={(e) => setOffSet(Number(e.target.value))}>
+      <select
+        value={offSet}
+        onChange={(e) => setOffSet(Number(e.target.value))}
+      >
         {Limits.map((limit) => (
           <option key={limit} value={limit}>
             {limit}

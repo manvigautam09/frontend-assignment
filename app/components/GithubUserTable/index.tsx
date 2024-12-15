@@ -62,6 +62,7 @@ export default function GithubUserTable({ data }: { data: DataItem[] }) {
       <Pagination
         totalPages={totalPages}
         currentPage={currentPage}
+        offSet={offSet}
         setOffSet={changeLimit}
         handleNextPage={handleNextPage}
         handlePreviousPage={handlePreviousPage}
