@@ -52,22 +52,63 @@ a {
   text-decoration: none;
 }
 
-/* Table styling with a class */
+/* Updated table styling */
 .table {
   border-collapse: collapse;
   margin: 16px 0;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .table th,
 .table td {
   border: 1px solid var(--gray-alpha-200);
-  padding: 8px;
+  padding: 12px;
   text-align: left;
 }
 
 .table th {
   background-color: var(--gray-alpha-100);
   font-weight: bold;
+  color: var(--foreground);
+}
+
+.table tr:nth-child(even) {
+  background-color: var(--gray-alpha-100);
+}
+
+.table tr:hover {
+  background-color: var(--button-secondary-hover);
+}
+
+/* Pagination styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: var(--background);
+  border: 1px solid var(--gray-alpha-200);
+  padding: 8px 16px;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: var(--button-primary-hover);
+  color: var(--foreground);
+}
+
+.pagination select {
+  margin: 0 8px;
+  padding: 8px;
+  border: 1px solid var(--gray-alpha-200);
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 .heading {

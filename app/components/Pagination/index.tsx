@@ -14,7 +14,7 @@ export default function Pagination({
   setOffSet: (val: number) => void;
 }) {
   return (
-    <div>
+    <div className="pagination">
       <button onClick={handlePreviousPage} disabled={currentPage === 1}>
         Previous
       </button>
