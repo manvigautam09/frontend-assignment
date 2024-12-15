@@ -1,18 +1,17 @@
 import { Limits } from "@/app/constant";
-import { Dispatch, SetStateAction } from "react";
 
 export default function Pagination({
   totalPages,
   currentPage,
   setOffSet,
-  handlePreviousPage,
   handleNextPage,
+  handlePreviousPage,
 }: {
   totalPages: number;
   currentPage: number;
   handlePreviousPage: () => void;
   handleNextPage: () => void;
-  setOffSet: Dispatch<SetStateAction<number>>;
+  setOffSet: (val: number) => void;
 }) {
   return (
     <div>

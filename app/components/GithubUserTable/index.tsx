@@ -23,6 +23,11 @@ export default function GithubUserTable({ data }: { data: DataItem[] }) {
     }
   };
 
+  const changeLimit = (val: number) => {
+    setOffSet(val);
+    setCurrentPage(1);
+  };
+
   return (
     <div>
       <h1>Data Table</h1>
@@ -35,20 +40,22 @@ export default function GithubUserTable({ data }: { data: DataItem[] }) {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
-            <tr key={item["s.no"]}>
-              <td>{item["s.no"]}</td>
-              <td>{item["percentage.funded"]}</td>
-              <td>{item["amt.pledged"]}</td>
-            </tr>
-          ))}
+          {data
+            .slice(currentPage * offSet - offSet, currentPage * offSet)
+            .map((item) => (
+              <tr key={item["s.no"]}>
+                <td>{item["s.no"]}</td>
+                <td>{item["percentage.funded"]}</td>
+                <td>{item["amt.pledged"]}</td>
+              </tr>
+            ))}
         </tbody>
       </table>
 
       <Pagination
         totalPages={totalPages}
         currentPage={currentPage}
-        setOffSet={setOffSet}
+        setOffSet={changeLimit}
         handleNextPage={handleNextPage}
         handlePreviousPage={handlePreviousPage}
       />
