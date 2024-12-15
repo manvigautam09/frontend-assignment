@@ -67,6 +67,7 @@ a {
 }
 
 .table-contain {
+  position: relative;
   width: 700px;
   height: 700px;
   overflow: auto;
@@ -86,9 +87,12 @@ a {
 }
 
 .table th {
-  background-color: var(--gray-alpha-100);
+  position: sticky;
+  top: 0;
+  background-color: #ededed;
   font-weight: bold;
   color: var(--foreground);
+  z-index: 1;
 }
 
 .table tr:nth-child(even) {
@@ -103,7 +107,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
   flex-wrap: wrap;
 }
 
