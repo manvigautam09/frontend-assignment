@@ -1,4 +1,4 @@
-import { Limits } from "@/app/constant";
+import { Limits } from "../../constant";
 
 export default function Pagination({
   offSet,
@@ -16,8 +16,16 @@ export default function Pagination({
   setOffSet: (val: number) => void;
 }) {
   return (
-    <div className="pagination">
-      <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+    <div
+      className="pagination"
+      role="navigation"
+      aria-label="Pagination Navigation"
+    >
+      <button
+        onClick={handlePreviousPage}
+        disabled={currentPage === 1}
+        aria-label="Previous Page"
+      >
         Previous
       </button>
       <span>
@@ -26,6 +34,7 @@ export default function Pagination({
       <select
         value={offSet}
         onChange={(e) => setOffSet(Number(e.target.value))}
+        aria-label="Items per page"
       >
         {Limits.map((limit) => (
           <option key={limit} value={limit}>
@@ -33,7 +42,11 @@ export default function Pagination({
           </option>
         ))}
       </select>
-      <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+      <button
+        onClick={handleNextPage}
+        disabled={currentPage === totalPages}
+        aria-label="Next Page"
+      >
         Next
       </button>
     </div>
