@@ -29,10 +29,8 @@
 
 /* Table styling with a class */
 .table {
-  width: 100%;
   border-collapse: collapse;
   margin: 16px 0;
-  background-color: #fff; /* Light background for better contrast */
 }
 
 .table th,
@@ -40,7 +38,6 @@
   border: 1px solid var(--gray-alpha-200);
   padding: 8px;
   text-align: left;
-  color: #000; /* Dark text for readability */
 }
 
 .table th {
