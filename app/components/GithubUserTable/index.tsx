@@ -34,27 +34,29 @@ export default function GithubUserTable({ data }: { data: DataItem[] }) {
         <h1>User content</h1>
         <DarkModeToggle />
       </div>
-      <div className="table-contain">
-        <table className="table" aria-label="Funding Data Table">
-          <thead>
-            <tr>
-              <th scope="col">S.No.</th>
-              <th scope="col">Percentage funded</th>
-              <th scope="col">Amount pledged</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data
-              .slice(currentPage * offSet - offSet, currentPage * offSet)
-              .map((item) => (
-                <tr key={item["s.no"]}>
-                  <td>{item["s.no"]}</td>
-                  <td>{item["percentage.funded"]}</td>
-                  <td>{item["amt.pledged"]}</td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
+      <div className="table-outer">
+        <div className="table-contain">
+          <table className="table" aria-label="Funding Data Table">
+            <thead>
+              <tr>
+                <th scope="col">S.No.</th>
+                <th scope="col">Percentage funded</th>
+                <th scope="col">Amount pledged</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data
+                .slice(currentPage * offSet - offSet, currentPage * offSet)
+                .map((item) => (
+                  <tr key={item["s.no"]}>
+                    <td>{item["s.no"]}</td>
+                    <td>{item["percentage.funded"]}</td>
+                    <td>{item["amt.pledged"]}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <Pagination

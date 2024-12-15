@@ -50,7 +50,7 @@ body.dark-mode {
 
 * {
   box-sizing: border-box;
-  padding: 5px;
+  padding: 0;
   margin: 0;
 }
 
@@ -59,9 +59,19 @@ a {
   text-decoration: none;
 }
 
+.table-outer {
+  display: flex;
+  justify-content: center;
+}
+
+.table-contain {
+  width: 700px;
+  height: 300px;
+  overflow: auto;
+}
+
 .table {
   border-collapse: collapse;
-  margin: 16px 0;
   width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -101,7 +111,8 @@ a {
   margin: 0 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-  border-radius: 10px;
+  border-radius: 5px;
+  color: var(--foreground);
 }
 
 .pagination button:hover {
@@ -112,12 +123,15 @@ a {
   background-color: var(--gray-alpha-200);
   cursor: not-allowed;
 }
+
 .pagination select {
   margin: 0 8px;
   padding: 8px;
   border: 1px solid var(--gray-alpha-200);
   background-color: var(--background);
   color: var(--foreground);
+  border-radius: 7px;
+  outline: none;
 }
 
 .heading {
